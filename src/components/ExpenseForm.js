@@ -7,7 +7,6 @@ import 'react-dates/lib/css/_datepicker.css';
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       description: props.expense ? props.expense.description : '',
       note: props.expense ? props.expense.note : '',
@@ -17,7 +16,6 @@ export default class ExpenseForm extends React.Component {
       error: ''
     };
   }
-
   onDescriptionChange = (e) => {
     const description = e.target.value;
     this.setState(() => ({ description }));
@@ -78,6 +76,7 @@ export default class ExpenseForm extends React.Component {
             onDateChange={this.onDateChange}
             focused={this.state.calendarFocused}
             onFocusChange={this.onFocusChange}
+            id="your_unique_id"
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
